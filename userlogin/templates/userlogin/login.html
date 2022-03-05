@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="static/userlogin/styles.css">
+  <a href="{%url "homepage" %}"> Go to Home Page</a>
+</head>
+
+{% if user.is_authenticated %}
+
+
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Welcome {{request.user}}</h4>
+
+</div>
+
+{% endif %}
+
+<body>
+  
+  <div class="wrapper">
+    <h2 >Login</h2>
+      <hr>
+      <div class="form-inner">
+        <form method  = "POST" action= "", class="login">{% csrf_token %}
+          <div class="field">
+            <input type="text" placeholder="Username" name = "username"required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Password" name = "password"required>
+          </div>
+          <div class="pass-link"><a href="#">Forgot password?</a></div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">Not a member? <a href="signup">Signup now</a></div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+ 
+</body>
+
+</html>

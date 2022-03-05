@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="static/userlogin/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="form-inner">
+            <form method= "POST" action="signup" class="signup"> {% csrf_token %}
+                <h2>Sign Up</h2>
+                <p style="font-size: small;">Please fill in this form to create an account!</p>
+                <hr>
+                <div class="row">
+                    <div class="field">
+                        <input type="text" placeholder="First Name" name="firstname" required > 
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Last Name" name = "lastname" required>
+                    </div>
+                </div>
+
+                  <div class="field">
+                    <input type="text" placeholder="Username" name = "username" required>
+                </div>  
+                
+                <div class="field">
+                    <input type="Email" placeholder="Email Address" name = "email" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Password"  name = "pass1"required >
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Confirm password" name="pass2" required>
+                </div>
+                <div class="form-group" >
+                    <input type="checkbox" required="required"> 
+                    <label>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                </div>
+
+                <div class="field btn">
+                    <div class="btn-layer">
+                        <input type="submit" value="Signup">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
